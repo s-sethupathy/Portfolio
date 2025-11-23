@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sethupathy Selvaraj - Bioinformatics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2d3748;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            margin: 0 auto 30px;
+            display: block;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .hero .contact {
+            margin-top: 25px;
+        }
+
+        .hero .contact a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero .contact a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.2em;
+            color: #1a202c;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .intro p {
+            font-size: 1.15em;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .intro .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #1a202c;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h2 span {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service {
+            background: #f7fafc;
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            border-left-color: #764ba2;
+        }
+
+        .service h3 {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service p {
+            color: #4a5568;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .projects {
+            display: grid;
+            gap: 35px;
+        }
+
+        .project {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .project:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #667eea;
+        }
+
+        .project h3 {
+            font-size: 1.5em;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .project h3 i {
+            color: #667eea;
+            font-size: 0.8em;
+        }
+
+        .project .desc {
+            color: #4a5568;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .project .impact {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            margin-top: 20px;
+        }
+
+        .project .impact strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .skills-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .skills-section h2 {
+            color: white;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-group h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .value-prop {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .value-prop:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.1);
+        }
+
+        .value-prop i {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .value-prop h3 {
+            font-size: 1.2em;
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .value-prop p {
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .cta a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        .cta a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .tagline {
+                font-size: 1.1em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .services,
+            .skills,
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+        }
+
+        @media print {
+            .hero {
+                background: #667eea;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .skills-section {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .service, .project {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="https://drive.google.com/uc?export=view&id=1SOoVX7obA_5HNmY-gKdle8zxFlz5daj1" alt="Sethupathy Selvaraj" class="profile-photo">
+        <h1>Sethupathy Selvaraj</h1>
+        <p class="tagline">Bioinformatics Engineer | Clinical NGS Specialist</p>
+        <div class="contact">
+            <a href="mailto:sethupathyselvaraj01@gmail.com">
+                <i class="fas fa-envelope"></i> Get in Touch
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h2>I Build Tools That Save Clinical Labs <span class="highlight">Time & Money</span></h2>
+            <p>Most bioinformatics tools are built for research. Mine are built for <strong>real-world clinical diagnostics</strong>.</p>
+            <p>I specialize in transforming manual, error-prone genomic workflows into fast, automated, and reproducible pipelines. My focus: <span class="highlight">WES/WGS variant analysis, phenotype-driven prioritization, CNV detection, and depth inspection</span>.</p>
+            <p>I learned by solving actual bottlenecks in molecular diagnostics labs—not from textbooks.</p>
+        </div>
+
+        <section>
+            <h2>What I <span>Deliver</span></h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Clinical WES/WGS Analysis</h3>
+                    <p>Complete secondary analysis pipeline: QC, alignment, variant calling, annotation, and clinical-grade reports. Turnaround: 24-72 hours.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Phenotype-Driven Variant Prioritization</h3>
+                    <p>HPO-based ranking with QC metrics (depth, allele balance, strand bias). Get actionable shortlists, not overwhelming VCFs.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Depth & Coverage Inspection</h3>
+                    <p>Automated BAM/VCF depth extraction for specific variants. Identify low-coverage regions without manual IGV checking.</p>
+                </div>
+
+                <div class="service">
+                    <h3>CNV Detection (SMN1/SMN2)</h3>
+                    <p>Specialized caller for high-homology regions. Pre-screening support for spinal muscular atrophy (SMA) with copy number estimation.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Pipeline Automation</h3>
+                    <p>Convert manual workflows to reproducible scripts. Sarek customization, web-based result viewers, consolidated reporting.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Custom Lab Tools</h3>
+                    <p>Lightweight, purpose-built solutions: variant filters, phenotype interpreters, depth extractors, QC generators. No heavy infrastructure needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected <span>Projects</span></h2>
+            <div class="projects">
+                <div class="project">
+                    <h3><i class="fas fa-microscope"></i> Automated Depth Inspection Tool</h3>
+                    <p class="desc">Python-based tool that extracts depth metrics for specific variants and automatically flags problematic low-coverage regions.</p>
+                    <div class="impact">
+                        <strong>Impact:</strong> Reduced depth verification time from 30+ minutes per sample to under 2 minutes. Eliminated manual IGV checks for routine cases.
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3><i class="fas fa-filter"></i> Clinical Variant Inspection Pipeline</h3>
+                    <p class="desc">End-to-end automation for VCF processing: QC consolidation, annotation enrichment, allele balance filtering, and clinician-ready summaries.</p>
+                    <div class="impact">
+                        <strong>Impact:</strong> Turned 3-4 hours of manual Excel work into a 5-minute automated process. Improved consistency and reduced human error.
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3><i class="fas fa-dna"></i> SMN1/SMN2 CNV Caller</h3>
+                    <p class="desc">Depth-based copy number estimation for the SMN locus—one of genomics' most challenging regions due to 99.9% sequence homology.</p>
+                    <div class="impact">
+                        <strong>Impact:</strong> Enabled pre-screening for SMA carrier status in routine WGS workflows, providing preliminary CNV calls for downstream confirmation.
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3><i class="fas fa-globe"></i> Sarek Pipeline Web Interface</h3>
+                    <p class="desc">Custom web-based viewer for Sarek/Nextflow pipeline outputs, making QC metrics and variant results accessible to non-bioinformaticians.</p>
+                    <div class="impact">
+                        <strong>Impact:</strong> Democratized pipeline access across the lab. Technicians and clinicians can now review results without command-line expertise.
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3><i class="fas fa-stethoscope"></i> HPO-Based Variant Prioritization (In Development)</h3>
+                    <p class="desc">Integrates Human Phenotype Ontology terms to score and rank variants by clinical relevance, combining phenotype similarity with population frequency and pathogenicity.</p>
+                    <div class="impact">
+                        <strong>Goal:</strong> Reduce time-to-diagnosis by surfacing the most relevant variants first, with full QC context for rapid clinical interpretation.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why Labs <span>Choose Me</span></h2>
+            <div class="value-props">
+                <div class="value-prop">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Turnaround</h3>
+                    <p>24-72 hour delivery on most analyses</p>
+                </div>
+                <div class="value-prop">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Clinical Focus</h3>
+                    <p>Tools built for diagnostics, not research</p>
+                </div>
+                <div class="value-prop">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Lightweight</h3>
+                    <p>No heavy infrastructure or complex dependencies</p>
+                </div>
+                <div class="value-prop">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Affordable</h3>
+                    <p>Budget-friendly for small and mid-sized labs</p>
+                </div>
+                <div class="value-prop">
+                    <i class="fas fa-sync"></i>
+                    <h3>Reproducible</h3>
+                    <p>Documented, version-controlled workflows</p>
+                </div>
+                <div class="value-prop">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Confidential</h3>
+                    <p>NDA-ready with strict data privacy</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="skills-section">
+            <h2>Technical Stack</h2>
+            <div class="skills">
+                <div class="skill-group">
+                    <h3><i class="fas fa-dna"></i> Genomics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WES/WGS Analysis</span>
+                        <span class="skill-tag">Variant Calling</span>
+                        <span class="skill-tag">CNV Detection</span>
+                        <span class="skill-tag">HPO Phenotyping</span>
+                        <span class="skill-tag">Clinical Reporting</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Nextflow</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Sarek</span>
+                        <span class="skill-tag">bcftools</span>
+                        <span class="skill-tag">samtools</span>
+                        <span class="skill-tag">bedtools</span>
+                        <span class="skill-tag">SnpEff</span>
+                        <span class="skill-tag">VEP</span>
+                        <span class="skill-tag">MultiQC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Let's Solve Your Lab's Bottlenecks</h2>
+            <p>Available for pipeline consulting, custom tool development, and WES/WGS analysis projects</p>
+            <a href="mailto:sethupathyselvaraj01@gmail.com">
+                <i class="fas fa-paper-plane"></i> Start a Conversation
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Sethupathy Selvaraj | Clinical Bioinformatics Engineer</p>
+    </footer>
+</body>
+</html>
